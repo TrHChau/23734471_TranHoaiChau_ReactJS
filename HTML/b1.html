@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Compare BMI</h1>
+    <div>
+      <label for="massMark">Mass of Mark:</label>
+      <input type="text" id="massMark" />
+      <label for="heightMark">Height of Mark:</label>
+      <input type="text" id="heightMark" />
+    </div>
+    <div>
+      <label for="massJohn">Mass of John:</label>
+      <input type="text" id="massJohn" />
+      <label for="heightJohn">Height of John:</label>
+      <input type="text" id="heightJohn" />
+    </div>
+    <button type="submit" id="btnCal">Submit</button>
+    <p id="resultMark"></p>
+    <p id="resultJohn"></p>
+    <p id="Compare"></p>
+
+    <script>
+      let heightJohn = document.getElementById("heightJohn");
+      let heightMark = document.getElementById("heightMark");
+      let massJohn = document.getElementById("massJohn");
+      let massMark = document.getElementById("massMark");
+      let btnCal = document.getElementById("btnCal");
+      let resultJohn1 = document.getElementById("resultJohn");
+      let resultMark1 = document.getElementById("resultMark");
+      let Compare = document.getElementById("Compare");
+      btnCal.onclick = function () {
+        let resultJohn =
+          parseFloat(massJohn.value) /
+          (parseFloat(heightJohn.value) * parseFloat(heightJohn.value));
+        let resultMark =
+          parseFloat(massMark.value) /
+          (parseFloat(heightMark.value) * parseFloat(heightMark.value));
+        resultJohn1.textContent = `BMI of John ${resultJohn}`;
+        resultMark1.textContent = `BMI of Mark ${resultMark}`;
+        if (resultJohn < resultMark) {
+          console.log("BMI of Mark is higher than BMI of John");
+          Compare.textContent = `BMI of Mark is ${resultMark} higher than BMI of John is ${resultJohn}`;
+        } else if (resultMark < resultJohn) {
+          console.log("BMI of John is higher than BMI of Mark");
+          Compare.textContent = `BMI of John is ${resultJohn} higher than BMI of Mark is ${resultMark}`;
+        }
+      };
+    </script>
+  </body>
+</html>
