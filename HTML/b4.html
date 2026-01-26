@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const bill = Number(prompt("Nhập giá trị của hóa đơn (bill): "));
+      if (isNaN(bill) || bill < 0) {
+        console.log("Vui lòng nhập số hợp lệ");
+      } else {
+        const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+        const total = bill + tip;
+        console.log(
+          `Hóa đơn là ${bill.toFixed(2)} $, tiền hoa hồng là ${tip.toFixed(2)}$, và tổng hóa đơn là ${total.toFixed(2)}$`,
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const Mark = {
+        fullName: "Mark Miller",
+        mass: 78,
+        height: 1.69,
+        clacBMI: function () {
+          this.bmi = this.mass / (this.height * this.height);
+          return this.bmi;
+        },
+      };
+      const John = {
+        fullName: "John Smith",
+        mass: 90,
+        height: 1.95,
+        clacBMI: function () {
+          this.bmi = this.mass / (this.height * this.height);
+          return this.bmi;
+        },
+      };
+      Mark.clacBMI();
+      John.clacBMI();
+
+      console.log(
+        `${Mark.fullName}'s BMI (${Mark.bmi.toFixed(1)}) is ${
+          Mark.bim > John.bmi ? "higher" : "lower"
+        } than${John.fullName}'s (${John.bmi.toFixed(1)})`,
+      );
+    </script>
+  </body>
+</html>
